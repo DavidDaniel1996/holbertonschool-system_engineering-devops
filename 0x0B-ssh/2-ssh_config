@@ -36,7 +36,7 @@ Host \*
 
 # ForwardX11Trusted yes
 
-# PasswordAuthentication yes
+# PasswordAuthentication no
 
 # HostbasedAuthentication no
 
@@ -66,6 +66,10 @@ Host \*
 
 # IdentityFile ~/.ssh/id_ed25519
 
+# IdentityFile ~/.ssh/school
+
+# IdentityFIle ~/.ssh/school.pub
+
 # Port 22
 
 # Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
@@ -88,4 +92,4 @@ Host \*
 
     SendEnv LANG LC_*
     HashKnownHosts yes
-    GSSAPIAuthentication yes
+    GSSAPIAuthentication yess
