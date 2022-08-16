@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Installs Nginx 
 
-sudo apt update -y
-sudo apt install -y nginx;
+apt update -y;
+apt install -y nginx;
 echo "Hello World!" >> ~/var/www/html/index.html
