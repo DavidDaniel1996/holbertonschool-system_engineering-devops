@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# HTTP Response Header
+
+apt-get update -y;
+apt-get install -y nginx;
+sudo mkdir /etc/nginx/html;
+sudo touch /etc/nginx/html/index.html;
+sudo touch /etc/nginx/html/custom_404.html
+echo "Hello World!" >> /etc/nginx/html/index.html;
+echo "Ceci n'est pas une page" >> /etc/nginx/html/custom_404.html
+printf %s "server {
+    listen          80 default_server;
+    listen          [::]:80 default_server;
+    root            /etc/nginx/html;
+    index           index.html;
+    error_page 404  /custom_404.html;
+    add_header      X-Served-By $HOSTNAME;
+
+    location    /redirect_me {
+        return 301 http://gnomeo.tech/redirect_me;
+    }
+    location = /custom_404.html {
+        root /etc/nginx/html;
+        internal;
+    }
+}
+" > /etc/nginx/sites-available/default
+
+sudo service nginx restart
