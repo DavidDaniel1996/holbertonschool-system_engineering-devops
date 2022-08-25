@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Fix Port 80 bug
-sed -i 's/8080/80/g' /etc/ngnix/sites-enabled/default;
-sudo service ngnix restart
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default;
+sudo service nginx restart
