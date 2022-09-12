@@ -23,7 +23,7 @@ if __name__ == "__main__":
         """ Gets total number of tasks related to user,
         amount of those tasks that are done, and the names of those tasks """
         with open('{}.csv'.format(user['id']), 'w', encoding='utf-8') as f:
-            writer = csv.writer(f)
+            writer = csv.writer(f, quoting=csv.QUOTE_ALL)
             for task in task_list:
                 if user['id'] == task['userId']:
                     writer.writerow([
