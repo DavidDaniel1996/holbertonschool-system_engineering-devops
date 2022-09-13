@@ -29,6 +29,7 @@ if __name__ == "__main__":
                     task_dict["task"] = task['title']
                     task_dict["completed"] = task['completed']
                     task_dict["username"] = user['username']
-                    tasks.append(task_dict)
+                    dict_copy = task_dict.copy()
+                    tasks.append(dict_copy)
             user_info = {user['id']: tasks}
             json.dump(user_info, f)
