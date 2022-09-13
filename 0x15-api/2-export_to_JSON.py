@@ -20,7 +20,7 @@ if __name__ == "__main__":
         response2 = requests.get('https://jsonplaceholder.typicode.com/todos')
         task_list = json.loads(response2.text)
 
-        """ Exports formatted info to CSV format """
+        """ Exports formatted info to JSON file """
         with open('{}.json'.format(user['id']), 'w', encoding='utf-8') as f:
             task_dict = {}
             tasks = []
