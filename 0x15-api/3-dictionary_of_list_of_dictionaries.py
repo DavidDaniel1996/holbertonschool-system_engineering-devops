@@ -20,6 +20,7 @@ if __name__ == "__main__":
 
     """ Exports formatted info to JSON file """
     with open('todo_all_employees.json', 'w', encoding='utf-8') as f:
+        users_info = {}
         for user in users:
             task_dict = {}
             tasks = []
@@ -30,5 +31,5 @@ if __name__ == "__main__":
                     task_dict['completed'] = task['completed']
                     dict_copy = task_dict.copy()
                     tasks.append(dict_copy)
-            user_info = {user['id']: tasks}
-            json.dump(user_info, f)
+            users_info[user['id']] = tasks
+        json.dump(users_info, f)
