@@ -25,9 +25,10 @@ if __name__ == "__main__":
             task_dict = {}
             tasks = []
             for task in task_list:
-                task_dict["task"] = task['title']
-                task_dict["completed"] = task['completed']
-                task_dict["username"] = user['username']
-                tasks.append(task_dict)
+                if user['id'] == task['userId']:
+                    task_dict["task"] = task['title']
+                    task_dict["completed"] = task['completed']
+                    task_dict["username"] = user['username']
+                    tasks.append(task_dict)
             user_info = {user['id']: tasks}
             json.dump(user_info, f)
