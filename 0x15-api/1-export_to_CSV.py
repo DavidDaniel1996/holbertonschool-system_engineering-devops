@@ -20,6 +20,7 @@ if __name__ == "__main__":
         response2 = requests.get('https://jsonplaceholder.typicode.com/todos')
         task_list = json.loads(response2.text)
 
+        print(type(user['id']))
         """ Exports formatted info to CSV format """
         with open('{}.csv'.format(user['id']), 'w', encoding='utf-8') as f:
             writer = csv.writer(f, quoting=csv.QUOTE_ALL)
