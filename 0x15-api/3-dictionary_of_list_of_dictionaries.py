@@ -25,9 +25,9 @@ if __name__ == "__main__":
             tasks = []
             for task in task_list:
                 if user['id'] == task['userId']:
-                    task_dict["task"] = task['title']
-                    task_dict["completed"] = task['completed']
-                    task_dict["username"] = user['username']
+                    task_dict['username'] = user['username']
+                    task_dict['task'] = task['title']
+                    task_dict['completed'] = task['completed']
                     dict_copy = task_dict.copy()
                     tasks.append(dict_copy)
             user_info = {user['id']: tasks}
